@@ -6,17 +6,19 @@ package com.avbravo.microdatagenesis.repository;
 
 import com.avbravo.jmoordbgenesis.repository.Repository;
 import com.avbravo.microdatagenesis.model.Persona;
-import jakarta.ejb.Stateless;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
+import java.io.Serializable;
 
 
 /**
  *
  * @author avbravo
  */
-//@Named(value = "personaRepository")
-//@ApplicationScoped
-@Stateless
-public class PersonaRepository extends Repository<Persona>{
+@Named(value = "personaRepository")
+@ApplicationScoped
+//@Stateless
+public class PersonaRepository extends Repository<Persona> implements Serializable{
 
    public PersonaRepository(){
         super(Persona.class,"genesis","persona");

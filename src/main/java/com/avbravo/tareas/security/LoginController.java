@@ -1,5 +1,7 @@
 package com.avbravo.tareas.security;
 
+import com.avbravo.jmoordbbase.util.JmoordbUtil;
+import com.avbravo.jmoordbutils.ConsoleUtil;
 import com.avbravo.jmoordbutils.JsfUtil;
 import com.avbravo.microdatagenesis.model.Persona;
 import com.avbravo.microdatagenesis.repository.PersonaRepository;
@@ -55,7 +57,7 @@ public class LoginController implements Serializable {
 // <editor-fold defaultstate="collapsed" desc="inject()">
 //    @Inject
 //   Logger LOG;
-    @Inject
+   @Inject
   PersonaRepository personaRepository;
     @Inject
     private SecurityContext securityContext;
@@ -81,8 +83,11 @@ public class LoginController implements Serializable {
                     .id("!")
                     .username("aris")
                     .build();
-//          personaRepository.save(persona);
+         personaRepository.save(persona);
+         ConsoleUtil.info("--> Guardado");
+          //  System.out.println("--> Guardado");
         } catch (Exception e) {
+            System.out.println(JmoordbUtil.nameOfClass() + "."+JmoordbUtil.nameOfMethod() + " : "+e.getLocalizedMessage());
 //            LOG.log(Level.INFO, "init() " + e.getLocalizedMessage());
         }
     }
