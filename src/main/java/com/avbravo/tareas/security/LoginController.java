@@ -1,5 +1,6 @@
 package com.avbravo.tareas.security;
 
+import com.avbravo.jmoordbbase.configuration.JmoordbConnection;
 import com.avbravo.jmoordbbase.util.JmoordbUtil;
 import com.avbravo.jmoordbutils.ConsoleUtil;
 import com.avbravo.jmoordbutils.JsfUtil;
@@ -57,8 +58,8 @@ public class LoginController implements Serializable {
 // <editor-fold defaultstate="collapsed" desc="inject()">
 //    @Inject
 //   Logger LOG;
-   @Inject
-  PersonaRepository personaRepository;
+//   @Inject
+//  PersonaRepository personaRepository;
     @Inject
     private SecurityContext securityContext;
 
@@ -79,11 +80,19 @@ public class LoginController implements Serializable {
     public LoginController() {
         try {
             System.out.println("---->constructor ");
-            Persona persona = Persona.builder()
-                    .id("!")
-                    .username("aris")
-                    .build();
-         personaRepository.save(persona);
+//              JmoordbConnection jmc = new JmoordbConnection.Builder()
+//                    .withSecurity(false)
+//                    .withDatabase("jmoordbtest")
+//                    .withHost("")
+//                    .withPort(0)
+//                    .withUsername("")
+//                    .withPassword("")
+//                    .build();
+//            Persona persona = Persona.builder()
+//                    .id("!")
+//                    .username("aris")
+//                    .build();
+//         personaRepository.save(persona);
          ConsoleUtil.info("--> Guardado");
           //  System.out.println("--> Guardado");
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.avbravo.tareas;
+package com.avbravo.genesis;
 
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.Produces;

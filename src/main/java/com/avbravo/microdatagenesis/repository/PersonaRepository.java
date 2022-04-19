@@ -8,7 +8,6 @@ import com.avbravo.jmoordbgenesis.repository.Repository;
 import com.avbravo.microdatagenesis.model.Persona;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
-import java.io.Serializable;
 
 
 /**
@@ -18,7 +17,7 @@ import java.io.Serializable;
 @Named(value = "personaRepository")
 @ApplicationScoped
 //@Stateless
-public class PersonaRepository extends Repository<Persona> implements Serializable{
+public class PersonaRepository extends Repository<Persona> {
 
    public PersonaRepository(){
         super(Persona.class,"genesis","persona");

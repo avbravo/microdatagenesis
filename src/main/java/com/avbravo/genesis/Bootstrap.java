@@ -1,5 +1,6 @@
-package com.avbravo.tareas;
+package com.avbravo.genesis;
 
+import com.avbravo.jmoordbbase.configuration.JmoordbConnection;
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
@@ -25,6 +26,7 @@ public class Bootstrap {
         try {
              LOG.log(Level.INFO, "bootstraping application...");
        
+             LOG.log(Level.INFO, "conecction ...");
         } catch (Exception e) {
    LOG.log(Level.INFO, "init() "+e.getLocalizedMessage());
         }
